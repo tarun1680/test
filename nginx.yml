@@ -1,0 +1,15 @@
+---
+
+
+- hosts : test-servers
+  tasks :
+   - name : To install apache2
+     apt  : pkg=apache2 state=installed update_cache=true state=latest
+   
+
+
+  handlers : 
+   - name : start apache2
+     service : name=apache2 state=restarted
+
+
